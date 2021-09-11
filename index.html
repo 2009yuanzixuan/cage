@@ -1,0 +1,296 @@
+<!doctype html>
+
+<html>
+    <head>
+        <!--外部js文件导入，以及icon的搭建-->
+        <link rel="icon" href="icon/yzx.ico" >
+        <link rel="stylesheet"  href="templates/A_main.css">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!--外部js文件导入，以及icon的搭建-->
+
+        <meta charset="utf-8"> 
+
+
+        <!--==============================================CSS部分=================================================-->
+        <style>
+            p{
+                font-size:20px;
+            }
+            
+            body{
+                background-image: url(static/images/bg.png);
+                text-align:center;
+            }
+            img{
+                width: 100%;
+            }
+            div{
+                text-align:center;                
+                background-color:rgba(255,255,255,0);   
+                font-family: kaiti;
+                border: 2px solid;
+                border-color: rgba(250,250,255,0);
+                border-radius: 18px;
+                margin: 10px;
+                padding: 10px;
+            }
+            span{
+                border-radius: 18px;
+            }
+            a{
+                font-size: 30px;
+                font-family: kaiti;
+                text-decoration:none;
+                width: auto;
+                height: auto;
+                color:rgba(50,120,255,0.8);
+            }
+            
+            h1{
+                color: rgba(50,50,50,0.6);
+                font-family: kaiti;
+            }
+            .bu1{
+                color: rgba(198,250,2250,0.6);
+                font-family: kaiti;
+            }
+            #percent{
+                width: 100%;
+                height:280px;
+            }
+            /*返回顶部按钮*/
+            #myBtn {
+                display: none; /* 默认隐藏 */
+                position: fixed; 
+                bottom: 20px; 
+                right: 30px; 
+                z-index: 99; 
+                border: none;
+                outline: none; 
+                background-color:rgba(250,250,250,0.5);/* 设置背景颜色，你可以设置自己想要的颜色或图片 */
+                cursor: pointer; 
+                padding: 15px; 
+                border-radius: 10px; /* 圆角 */
+            }
+            
+            #myBtn:hover {
+                background-color: #555; 
+            }
+            #xiaxiu{
+                background-color:rgba(228,243,246,0.6);  
+                border-radius: 10px;
+                border-color: rgba(250,250,255,0);
+            }
+            .hhh{
+                width:33%
+            }
+            /*返回顶部按钮*/
+        </style>
+        <!--=======================================CSS部分===========================================-->
+        <script>
+            
+            function cg(){
+                $("body").css("background-image","url(static/images/grey.jpg)");
+                $("h1").css("color","Beige");
+            }
+            function cb(){
+                $("body").css("background-image","url(static/images/bg.png)");
+                $("h1").css("color","rgba(50,50,50,0.5)");
+            }
+            function cp(){
+                $("body").css("background-image","url(static/images/pink.jpg)");
+                $("h1").css("color","rgba(50,50,50,0.5");
+            }
+        </script>
+
+
+    </head>
+    <body>
+        <!--=======================================JS部分===========================================-->
+        <script>
+            // 当网页向下滑动 20px 出现"返回顶部" 按钮
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {console.log(121);
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            
+            // 点击按钮，返回顶部
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+        <!--=======================================JS部分===========================-->
+
+        <!--                                                                        -->
+        <!--                                                                        -->
+        <!--                                                                        -->
+        <!--                                                                        -->
+        <!--                                                                        -->
+
+        <!--返回顶部按钮-->
+        <button onclick="topFunction()" id="myBtn" title="返回顶部" >
+            <img src="sign/arrow-up-circle.svg" style="width:40px;height:40px;">
+        </button>
+        <!--返回顶部按钮-->
+
+
+
+        <!--                                                                        -->
+        <!--                                                                        -->
+
+
+
+
+
+
+        <!--================================================头部导航和轮播=============================================================-->
+        <div class="top-box" id="top">
+            <br>
+            <h1 style="font-size:40px;">^-^Alex袁梓轩的仓库</h1>
+            <div class="tops-box">
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-expanded="false" style="background-color:rgba(209,236,240,0.6); border-color: rgba(250,250,255,0); color:rgba(50,120,255,0.8);">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                        <a class="dropdown-item" onclick="cg()" id="daohang"><h6>素描主题</h6></a>
+                        <a class="dropdown-item" onclick="cb()" id="daohang"><h6>蓝色主题</h6></a>
+                        <a class="dropdown-item" onclick="cp()" id="daohang"><h6>粉色主题</h6></a>
+                    </div>
+                </div>
+                
+            </div>
+
+
+
+
+
+
+
+
+
+            <!--轮播作品...................................................................................................-->
+            <div id="demo" class="carousel slide" data-ride="carousel">
+ 
+              <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                    <li data-target="#demo" data-slide-to="5"></li>
+                </ul>
+             
+                <!-- 轮播图片 -->
+                <div class="carousel-inner" id="code">
+                    <div class="carousel-item active">
+                        <img src="codeepic/P1.png" id="percent" id="f-w">
+                        <div class="carousel-caption">
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=14205468&version=offline&form=python&langType=python" target="_blank">牛年作品①:2021红包冲突</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=14805342&version=offline&form=python&langType=python" target="_blank">&nbsp;②:2021年兽跑酷</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=14805342&version=offline&form=python&langType=python" target="_blank">&nbsp;③:★2021除鼠迎牛</a>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="codeepic/P6.png" id="percent" id="f-w">
+                        <div class="carousel-caption">
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=18001987&version=offline&form=python&langType=python" target="_blank">工具①:原码破解</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=16200903&version=offline&form=python&langType=python" target="_blank">&nbsp;②:天气查询</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=21230530&version=offline&form=python&langType=python" target="_blank">&nbsp;③:★像素化图片</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="codeepic/P3.png" id="percent" id="f-w">
+                        <div class="carousel-caption">
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=18579850&version=offline&form=python&langType=python" target="_blank">手速系列①:单击</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=19269996&version=offline&form=python&langType=python" target="_blank">&nbsp;②:双击</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="codeepic/P4.png" id="percent" id="f-w">
+                        <div class="carousel-caption">
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=15960959&version=offline&form=python&langType=python" target="_blank">模仿系列①:★色彩游戏</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=21230078&version=offline&form=python&langType=python" target="_blank">&nbsp;②:★作业之下</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="codeepic/P2.png" id="percent" id="f-w">
+                        <div class="carousel-caption">
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=15623093&version=offline&form=python&langType=python" target="_blank">元宵作品①:圆吃圆</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=15665151&version=offline&form=python&langType=python" target="_blank">&nbsp;②:★猜灯谜</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="codeepic/P5.png" id="percent">
+                        <div class="carousel-caption" id="f-w">
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=15805934&version=webpy&form=webpy&langType=webpy" target="_blank">海龟作品①:方块大战</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=15807712&version=webpy&form=webpy&langType=webpy" target="_blank">&nbsp;②:无线圆圈</a>
+                            <a href="https://code.xueersi.com/home/project/detail?lang=code&pid=15804919&version=webpy&form=webpy&langType=webpy" target="_blank">&nbsp;③:荷塘月色</a>
+                        </div>
+                    </div>
+                    <div class="carousel-caption">
+                        caption：★代表上过首页
+                    </div>
+                </div>
+             
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+            <!--.................................................................................................................-->
+        </div>
+        <!--=========================================头部导航和轮播=====================================================-->    
+
+        <!--==========================================================大框========================================================-->
+        <div class="big">
+            
+                <!--===========================================================介绍=================================================-->
+                <div class="intro" id="introduce">
+                    <h1>使用方法</h1>
+                    <p>在网页后面加上'/ststic/文件类型'</p>
+                    <p>例如(/ststic/images,/ststic/music,/ststic/video)</p>
+                    <p>然后加上'/文件名称'</p>
+                    <p>例如[/123.png,/hhh.mp3]</p>
+                    <p>然后使用我的功能函数爬取图片</p>
+                </div>
+                <div class="nintro" >
+                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;功能函数</h1>
+                    
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def payin(url,clas,fn):</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;import requests
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;response = requests.get(url)
+                            
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;file_name=fn+clas
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;with open(file_name,"wb") as file:
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;file.write(response.content)
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;return file_name
+                    
+                </div>
+                <div class="intro" id="introduce">
+                    <h1>解释</h1>
+                    <p>clas是类型</p>
+                    <p>例如('.mp3','.mp4','.png')</p>
+                    <p>fn是文件名</p>
+                    <p>例如['123','hhh']</p>
+                    <p>url是使用方法中的网址</p>
+                </div>
+
+        </div>
+    </body>
+</html>
